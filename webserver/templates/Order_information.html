@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Index</title>
+</head>
+<body>
+<h1>{{name}}</h1>
+<form method="POST" action="/Search_Order">
+<p>Order_id<input type="text" name="Order_id"> <input type="submit" value="Search"></p>
+</form>
+
+<table class = "center" border='3' width = "40%" cellspacing='0' cellpadding='1'>
+    <tr>
+        {% for cell in filelist[0] %}
+            <th>{{ cell }}</th>
+        {% endfor %}
+    </tr>
+    {% for row in filelist[1:] %}
+    <tr>
+        <td><a href="/Order_detail/{{row[0]}}">{{row[0]}}</a></td>
+        {% for cell in row[1:] %}
+        <td>{{ cell }}</td>
+        {% endfor %}
+    </tr>
+    {% endfor %}
+</table>
+<p><a href="/Back">Back</a></p>
+
+    
+</body>
+</html>

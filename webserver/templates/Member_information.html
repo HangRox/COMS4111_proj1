@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Index</title>
+</head>
+<body>
+<h1>{{name}}</h1>
+<form method="POST" action="/Search_Member">
+<p><input type="text" name="member_id"> <input type="submit" value="Search"></p>
+<p><input type="radio" name="option" value = "member id"> Member id
+<input type="radio" name="option" value = "Name"> Name<p>
+</form>
+
+<table class = "center" border='3' width = "40%" cellspacing='0' cellpadding='1'>
+    <tr>
+        {% for cell in filelist[0] %}
+            <th>{{ cell }}</th>
+        {% endfor %}
+    </tr>
+    {% for row in filelist[1:] %}
+    <tr>
+        <td><a href="/Member_detail/{{row[0]}}">{{row[0]}}</a></td>
+        {% for cell in row[1:] %}
+        <td>{{ cell }}</td>
+        {% endfor %}
+    </tr>
+    {% endfor %}
+</table>
+<p><a href="/Back">Back</a></p>
+
+    
+</body>
+</html>

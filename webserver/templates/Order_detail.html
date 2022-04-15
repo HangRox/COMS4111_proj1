@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Index</title>
+</head>
+<body>
+<h1>{{name}}</h1>
+
+{% import "table.html" as T %}
+<p>Member<p>
+{{ T.make_table(memb) }}
+<p>Items<p>
+{{ T.make_table(tophat) }}
+<p>Operater<p>
+{{ T.make_table(empl) }}
+<p><a href="/Back">Back</a></p>
+
+    
+</body>
+</html>
