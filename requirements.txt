@@ -1,4 +1,4 @@
-name: eods-f21
+name: COMS4111
 channels: 
     - conda-forge
 dependencies:
